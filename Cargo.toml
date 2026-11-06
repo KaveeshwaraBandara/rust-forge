@@ -1,0 +1,22 @@
+# ─────────────────────────────────────────────────────────────
+#  rust-forge — Cargo workspace root
+#  Every lesson and project is its own crate inside this workspace.
+#  Book ref: https://doc.rust-lang.org/book/ch14-03-cargo-workspaces.html
+# ─────────────────────────────────────────────────────────────
+[workspace]
+resolver = "3"
+# Globs pick up new crates automatically: drop a folder with a Cargo.toml
+# into lessons/ or projects/ and it becomes part of the workspace.
+members = ["playground", "lessons/*", "projects/*"]
+
+# Shared metadata — member crates inherit with `edition.workspace = true` etc.
+[workspace.package]
+edition = "2024"
+rust-version = "1.85" # first stable release with the 2024 edition
+license = "MIT"
+authors = ["Kaveeshwara Bandara"]
+publish = false
+
+# Shared lint policy — member crates opt in with `[lints] workspace = true`.
+[workspace.lints.rust]
+unsafe_code = "forbid" # safety rail until L14 (unsafe & FFI), which opts out

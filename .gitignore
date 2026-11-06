@@ -1,0 +1,12 @@
+# Build output
+/target/
+
+# Backup files from rustfmt
+**/*.rs.bk
+
+# Editors / OS
+.idea/
+*.swp
+.DS_Store
+
+# Note: Cargo.lock IS committed on purpose (reproducible builds for binaries).

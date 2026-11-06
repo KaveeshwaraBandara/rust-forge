@@ -1,0 +1,5 @@
+# Pins everyone (you, CI, your Jetson) to the latest stable toolchain
+# plus the two tools the CI gate depends on.
+[toolchain]
+channel = "stable"
+components = ["rustfmt", "clippy"]
